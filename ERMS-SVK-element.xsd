@@ -200,8 +200,7 @@ Version:	0.1
 							<xs:element name="workflowStatus" type="xs:token"/>
 							<xs:element name="priority" type="xs:token" minOccurs="0"/>
 							<xs:element name="initiatedBy" type="erms:agentComplexType"/>
-							<xs:element name="initiatedDate" type="erms:dateTypeComplex">
-							</xs:element>
+							<xs:element name="initiatedDate" type="erms:dateTypeComplex"/>
 							<xs:element name="message" type="xs:string"/>
 							<xs:element name="workflowNotes" minOccurs="0">
 								<xs:complexType>
@@ -210,10 +209,10 @@ Version:	0.1
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
+							<xs:element name="workflowRecipients" type="workflowRecipientsType"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="workflowRecipients" type="workflowRecipientsType"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -257,7 +256,7 @@ Version:	0.1
 	<xs:element name="svkAppendix">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="appendix" type="erms:appendixType"/>
+				<xs:element ref="erms:appendix"/>
 				<!-- Här börjar Svenska kyrkans anpassning av typen appendixType i ERMS -->
 				<xs:element name="fileInfo">
 					<xs:complexType>
