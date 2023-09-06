@@ -160,6 +160,7 @@ Version:	0.1
 										<xs:enumeration value="projekt"/>
 										<xs:enumeration value="riktning"/>
 										<xs:enumeration value="sekretess"/>
+										<xs:enumeration value="status"/>
 										<xs:enumeration value="ärende"/>
 										<xs:enumeration value="ärendemening"/>
 										<xs:enumeration value="ärendenummer"/>
