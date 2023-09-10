@@ -10,7 +10,8 @@ Version:	0.1
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="https://xml.svenskakyrkan.se/ERMS-SVK-element"
 	xmlns:erms="https://DILCIS.eu/XML/ERMS"
-	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-element" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-element" elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0">
 	
 	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="https://citserms.dilcis.eu/schema/ERMS.xsd"/>
 	
@@ -33,13 +34,13 @@ Version:	0.1
 				<xs:element name="relatedObject" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="name" type="xs:token">
+							<xs:element name="objectName" type="xs:token">
 							</xs:element>
-							<xs:element name="identificator" type="xs:token" minOccurs="0">
+							<xs:element name="objectId" type="xs:token" minOccurs="0">
 							</xs:element>
 							<xs:element name="deliveringSystemId" type="xs:token" minOccurs="0"/>
 						</xs:sequence>
-						<xs:attribute name="objectType">
+						<xs:attribute name="typeOfObject">
 							<xs:simpleType>
 								<xs:restriction base="xs:token">
 									<xs:enumeration value="project"/>
@@ -130,7 +131,7 @@ Version:	0.1
 				<xs:element name="auditLogEvent" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="time" type="xs:dateTime"/>
+							<xs:element name="eventTime" type="xs:dateTime"/>
 							<xs:element name="user" type="xs:token"/>
 							<xs:element name="scope">
 								<xs:simpleType>
