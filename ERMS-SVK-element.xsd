@@ -212,6 +212,13 @@ Version:	0.1
 							</xs:element>
 							<xs:element name="workflowRecipients" type="workflowRecipientsType"/>
 						</xs:sequence>
+						<xs:attribute name="typeOfWorkflow">
+							<xs:simpleType>
+								<xs:restriction base="token">
+									<xs:enumeration value="approval"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
