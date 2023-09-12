@@ -198,6 +198,7 @@ Version:	0.1
 				<xs:element name="workflow" maxOccurs="unbounded">
 					<xs:complexType>					
 						<xs:sequence>
+							<xs:element name="workflowName" type="xs:token" minOccurs="0"/>
 							<xs:element name="workflowStatus" type="xs:token"/>
 							<xs:element name="priority" type="xs:token" minOccurs="0"/>
 							<xs:element name="initiatedBy" type="erms:agentComplexType"/>
