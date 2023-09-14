@@ -200,10 +200,10 @@ Version:	0.1
 						<xs:sequence>
 							<xs:element name="workflowName" type="xs:token" minOccurs="0"/>
 							<xs:element name="workflowStatus" type="xs:token"/>
-							<xs:element name="priority" type="xs:token" minOccurs="0"/>
-							<xs:element name="initiatedBy" type="erms:agentComplexType"/>
-							<xs:element name="initiatedDate" type="erms:dateTypeComplex"/>
-							<xs:element name="message" type="xs:string"/>
+							<xs:element name="workflowPriority" type="xs:token" minOccurs="0"/>
+							<xs:element name="workflowInitiatedBy" type="erms:agentComplexType"/>
+							<xs:element name="workflowInitiatedDate" type="erms:dateTypeComplex"/>
+							<xs:element name="workflowMessage" type="xs:string"/>
 							<xs:element name="workflowNotes" minOccurs="0">
 								<xs:complexType>
 									<xs:sequence>
@@ -229,9 +229,9 @@ Version:	0.1
 	<xs:complexType name="workflowNoteType">
 		<xs:sequence>
 			<xs:element name="workflowNoteText" type="xs:string"/>
-			<xs:element name="workflowNoteDate" type="erms:dateTypeComplex"/>
-			<xs:element name="workflowNoteFrom" type="erms:agentComplexType"/>
-			<xs:element name="workflowNoteTo" type="erms:agentComplexType"/>
+			<xs:element name="workflowNoteDate" type="erms:dateTypeComplex" minOccurs="0"/>
+			<xs:element name="workflowNoteFrom" type="erms:agentComplexType" minOccurs="0"/>
+			<xs:element name="workflowNoteTo" type="erms:agentComplexType" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -249,9 +249,9 @@ Version:	0.1
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="completedDate" type="erms:dateTypeComplex"/>
-						<xs:element name="completedBy" type="erms:agentComplexType"/>
-						<xs:element name="deputisingFor" type="erms:agentComplexType" minOccurs="0"/>
+						<xs:element name="recipientCompletedDate" type="erms:dateTypeComplex"/>
+						<xs:element name="recipientCompletedBy" type="erms:agentComplexType"/>
+						<xs:element name="recipientDeputisingFor" type="erms:agentComplexType" minOccurs="0"/>
 						<xs:element name="recipientComment" type="xs:string" minOccurs="0"/>
 						
 					</xs:sequence>
