@@ -191,6 +191,8 @@ Version:	0.1
 	</xs:element>
 	
 	<!-- ########################################## -->
+
+
 	
 	<xs:element name="workflows">
 		<xs:complexType>
@@ -199,7 +201,7 @@ Version:	0.1
 					<xs:complexType>					
 						<xs:sequence>
 							<xs:element name="workflowName" type="xs:token" minOccurs="0"/>
-							<xs:element name="workflowStatus" type="xs:token"/>
+							<xs:element name="workflowStatus" type="workflowStatusType"/>
 							<xs:element name="workflowPriority" type="xs:token" minOccurs="0"/>
 							<xs:element name="workflowInitiatedBy" type="erms:agentComplexType"/>
 							<xs:element name="workflowInitiatedDate" type="erms:dateTypeComplex"/>
@@ -215,7 +217,7 @@ Version:	0.1
 						</xs:sequence>
 						<xs:attribute name="typeOfWorkflow">
 							<xs:simpleType>
-								<xs:restriction base="token">
+								<xs:restriction base="xs:token">
 									<xs:enumeration value="approval"/>
 								</xs:restriction>
 							</xs:simpleType>
@@ -225,6 +227,16 @@ Version:	0.1
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:complexType name="workflowStatusType">
+		<xs:simpleContent>
+			<xs:restriction base="xs:token">
+				<xs:enumeration value="approved"/>
+				<xs:enumeration value="unapproved"/>
+				<xs:enumeration value="open"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
 	
 	<xs:complexType name="workflowNoteType">
 		<xs:sequence>
@@ -241,19 +253,11 @@ Version:	0.1
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="recipient" type="erms:agentComplexType"/>
-						<xs:element name="recipientStatus">
-							<xs:simpleType>
-								<xs:restriction base="xs:token">
-									<xs:enumeration value="godkänd"/>
-									<xs:enumeration value="avslaget"/>
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
+						<xs:element name="recipientStatus" type="workflowStatusType"/>
 						<xs:element name="recipientCompletedDate" type="erms:dateTypeComplex"/>
 						<xs:element name="recipientCompletedBy" type="erms:agentComplexType"/>
 						<xs:element name="recipientDeputisingFor" type="erms:agentComplexType" minOccurs="0"/>
 						<xs:element name="recipientComment" type="xs:string" minOccurs="0"/>
-						
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
