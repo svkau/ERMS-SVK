@@ -228,15 +228,13 @@ Version:	0.1
 		</xs:complexType>
 	</xs:element>
 
-	<xs:complexType name="workflowStatusType">
-		<xs:simpleContent>
-			<xs:restriction base="xs:token">
-				<xs:enumeration value="approved"/>
-				<xs:enumeration value="unapproved"/>
-				<xs:enumeration value="open"/>
-			</xs:restriction>
-		</xs:simpleContent>
-	</xs:complexType>
+	<xs:simpleType name="workflowStatusType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="approved"/>
+			<xs:enumeration value="unapproved"/>
+			<xs:enumeration value="open"/>
+		</xs:restriction>
+	</xs:simpleType>
 	
 	<xs:complexType name="workflowNoteType">
 		<xs:sequence>
