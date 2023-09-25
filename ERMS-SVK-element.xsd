@@ -14,6 +14,12 @@ Version:	0.1
 	version="1.0">
 	
 	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="https://citserms.dilcis.eu/schema/ERMS.xsd"/>
+
+	<xs:complexType name="agentsType">
+		<xs:sequence>
+			<xs:element ref="erms:agent" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 	
 	<!-- ########################################## -->
 	
@@ -63,8 +69,8 @@ Version:	0.1
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="noteText" type="xs:string"/>
-							<xs:element name="noteAuthor" type="xs:token"/>
-							<xs:element name="noteDate" type="xs:dateTime"/>
+							<xs:element name="agents" type="agentsType"/>
+							<xs:element ref="erms:dates"/>
 						</xs:sequence>
 						<xs:attribute name="typeOfNote">
 							<xs:simpleType>
@@ -203,8 +209,10 @@ Version:	0.1
 							<xs:element name="workflowName" type="xs:token" minOccurs="0"/>
 							<xs:element name="workflowStatus" type="workflowStatusType"/>
 							<xs:element name="workflowPriority" type="xs:token" minOccurs="0"/>
-							<xs:element name="workflowInitiatedBy" type="erms:agentComplexType"/>
-							<xs:element name="workflowInitiatedDate" type="erms:dateTypeComplex"/>
+							<xs:element name="agents" type="agentsType"
+							<!-- <xs:element name="workflowInitiatedBy" type="erms:agentComplexType"/> -->
+							<xs:element ref="erms:dates"/>
+							<!-- <xs:element name="workflowInitiatedDate" type="erms:dateTypeComplex"/> -->
 							<xs:element name="workflowMessage" type="xs:string"/>
 							<xs:element name="workflowNotes" minOccurs="0">
 								<xs:complexType>
@@ -239,9 +247,8 @@ Version:	0.1
 	<xs:complexType name="workflowNoteType">
 		<xs:sequence>
 			<xs:element name="workflowNoteText" type="xs:string"/>
-			<xs:element name="workflowNoteDate" type="erms:dateTypeComplex" minOccurs="0"/>
-			<xs:element name="workflowNoteFrom" type="erms:agentComplexType" minOccurs="0"/>
-			<xs:element name="workflowNoteTo" type="erms:agentComplexType" minOccurs="0"/>
+			<xs:element ref="erms:dates"/>
+			<xs:element name="agents" type="agentsType"/>
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -250,11 +257,9 @@ Version:	0.1
 			<xs:element name="workflowRecipient" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="recipient" type="erms:agentComplexType"/>
+						<xs:element name="agents" type="agentsType"/>
+						<xs:element ref="erms:dates"/>
 						<xs:element name="recipientStatus" type="workflowStatusType"/>
-						<xs:element name="recipientCompletedDate" type="erms:dateTypeComplex"/>
-						<xs:element name="recipientCompletedBy" type="erms:agentComplexType"/>
-						<xs:element name="recipientDeputisingFor" type="erms:agentComplexType" minOccurs="0"/>
 						<xs:element name="recipientComment" type="xs:string" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -272,14 +277,16 @@ Version:	0.1
 				<xs:element name="fileInfo">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="dateCreated" type="xs:dateTime"/>
-							<xs:element name="dateLastEdited" type="xs:dateTime"/>
+							<xs:element ref="erms:dates"/>
 							<xs:element name="versionNumber" type="xs:integer" minOccurs="0"/>
 							<xs:element name="variant" minOccurs="0">
 								<xs:simpleType>
 									<xs:restriction base="xs:token">
-										<xs:enumeration value="preservation"/>
+										<xs:enumeration value="display"/>
 										<xs:enumeration value="production"/>
+										<xs:enumeration value="preservation"/>
+										<xs:enumeration value="public"/>
+										<xs:enumeration value="signed"/>
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
