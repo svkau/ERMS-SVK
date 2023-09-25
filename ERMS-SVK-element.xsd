@@ -209,10 +209,8 @@ Version:	0.1
 							<xs:element name="workflowName" type="xs:token" minOccurs="0"/>
 							<xs:element name="workflowStatus" type="workflowStatusType"/>
 							<xs:element name="workflowPriority" type="xs:token" minOccurs="0"/>
-							<xs:element name="agents" type="agentsType"
-							<!-- <xs:element name="workflowInitiatedBy" type="erms:agentComplexType"/> -->
+							<xs:element name="agents" type="agentsType"/>
 							<xs:element ref="erms:dates"/>
-							<!-- <xs:element name="workflowInitiatedDate" type="erms:dateTypeComplex"/> -->
 							<xs:element name="workflowMessage" type="xs:string"/>
 							<xs:element name="workflowNotes" minOccurs="0">
 								<xs:complexType>
