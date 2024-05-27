@@ -292,6 +292,44 @@ Version:	0.1
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element name="signatureInfo" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="erms:dates"/>
+							<!-- initierat, frist -->
+							<xs:element ref="erms:agent"/>
+							<!-- signatureInitiatedBy -->
+							<xs:element name="signatureStatus" type="xs:token" />
+							<!-- Slutförd -->
+							<xs:element name="signatureFileHash">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:token">
+											<xs:attribute name="algorithm" type="xs:token"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="signatories">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="signatory" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="erms:agent"/>
+													<!-- <agentType="other" otherAgentType="signatory" -->
+													<xs:element ref="erms:dates"/>
+													<!-- <date dateType="other" otherDateType="signatory"> -->
+													<xs:element name="signatoryComment" type="xs:string" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 				<!-- Här slutar Svenska kyrkans anpassning av appendixType i ERMS -->
 			</xs:sequence>
 		</xs:complexType>
