@@ -2,18 +2,17 @@
 
 <!--
 Namn:		ERMS-SVK-element
-Version:	0.1
-Ändrad:		2023-09-05
+Version:	1.0
+Ändrad:		2024-08-20
 Ändrad av:	Henrik Vitalis
  -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns="https://xml.svenskakyrkan.se/ERMS-SVK-element"
 	xmlns:erms="https://DILCIS.eu/XML/ERMS"
-	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-element" elementFormDefault="qualified" attributeFormDefault="unqualified"
-	version="1.0">
+	targetNamespace="https://xml.svenskakyrkan.se/ERMS-SVK-element" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="https://citserms.dilcis.eu/schema/ERMS.xsd"/>
+	<xs:import namespace="https://DILCIS.eu/XML/ERMS" schemaLocation="ERMS_v3.xsd"/>
 
 	<xs:complexType name="agentsType">
 		<xs:sequence>
@@ -317,9 +316,7 @@ Version:	0.1
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element ref="erms:agent"/>
-													<!-- <agentType="other" otherAgentType="signatory" -->
 													<xs:element ref="erms:dates"/>
-													<!-- <date dateType="other" otherDateType="signatory"> -->
 													<xs:element name="signatoryComment" type="xs:string" minOccurs="0"/>
 												</xs:sequence>
 											</xs:complexType>
