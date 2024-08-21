@@ -312,7 +312,7 @@ Version:	1.0
 							<xs:element name="signatories">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="signatory" maxOccurs="unbounded">
+										<xs:element name="signatory" minOccurs="1" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element ref="erms:agent"/>
