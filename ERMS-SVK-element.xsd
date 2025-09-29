@@ -196,8 +196,6 @@ Version:	1.0
 	</xs:element>
 	
 	<!-- ########################################## -->
-
-
 	
 	<xs:element name="workflows">
 		<xs:complexType>
@@ -262,6 +260,26 @@ Version:	1.0
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- ########################################## -->
+
+	<xs:element name="boardMeetingInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="boardHandling" type="boardHandlingType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="boardHandlingType">
+		<xs:sequence>
+			<xs:element name="meetingInstance" type="xs:string"/>
+			<xs:element name="meetingDate" type="xs:dateTime"/>
+			<xs:element name="agendaItem" type="xs:token" minOccurs="0"/>
+			<xs:element name="boardHandlingNotes" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="boardHandlingNumber" type="xs:integer" use="optional"/>
 	</xs:complexType>
 	
 	<!-- ########################################## -->
@@ -332,3 +350,4 @@ Version:	1.0
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
