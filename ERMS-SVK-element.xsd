@@ -260,7 +260,6 @@ Version:	1.0
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element ref="auditLogEvents" minOccurs="0"/>
 				<xs:element name="signatureInfo" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
@@ -297,11 +296,13 @@ Version:	1.0
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element ref="auditLogEvents" minOccurs="0"/>
 				<!-- Här slutar Svenska kyrkans anpassning av appendixType i ERMS -->
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
 
 
 
