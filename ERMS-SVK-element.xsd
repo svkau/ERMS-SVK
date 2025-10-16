@@ -187,6 +187,7 @@ Version:	1.0
 			<xs:enumeration value="approved"/>
 			<xs:enumeration value="unapproved"/>
 			<xs:enumeration value="open"/>
+			<xs:enumeration value="canceled"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -301,5 +302,6 @@ Version:	1.0
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
 
 
