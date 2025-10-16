@@ -138,56 +138,7 @@ Version:	1.0
 						<xs:sequence>
 							<xs:element name="eventTime" type="xs:dateTime"/>
 							<xs:element name="user" type="xs:token"/>
-							<xs:element name="scope">
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:enumeration value="ankomstdatum"/>
-										<xs:enumeration value="ansvarig"/>
-										<xs:enumeration value="anteckning"/>
-										<xs:enumeration value="avsändare"/>
-										<xs:enumeration value="beskrivning"/>
-										<xs:enumeration value="beslut"/>
-										<xs:enumeration value="dokumentnummer"/>
-										<xs:enumeration value="dokumentreferens"/>
-										<xs:enumeration value="dokumentstatus"/>
-										<xs:enumeration value="dokumenttitel"/>
-										<xs:enumeration value="expedieringsdatum"/>
-										<xs:enumeration value="fastighet"/>
-										<xs:enumeration value="fil"/>
-										<xs:enumeration value="form"/>
-										<xs:enumeration value="handling"/>
-										<xs:enumeration value="handlingstyp"/>
-										<xs:enumeration value="initiativ"/>
-										<xs:enumeration value="klassificering"/>
-										<xs:enumeration value="kommentar"/>
-										<xs:enumeration value="medhandläggare"/>
-										<xs:enumeration value="mottagare"/>
-										<xs:enumeration value="nyckelord"/>
-										<xs:enumeration value="projekt"/>
-										<xs:enumeration value="riktning"/>
-										<xs:enumeration value="sekretess"/>
-										<xs:enumeration value="status"/>
-										<xs:enumeration value="ärende"/>
-										<xs:enumeration value="ärendemening"/>
-										<xs:enumeration value="ärendenummer"/>
-										<xs:enumeration value="ärendepart"/>
-										<xs:enumeration value="ärendereferens"/>
-										<xs:enumeration value="ärendestatus"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="action">
-								<xs:simpleType>
-									<xs:restriction base="xs:token">
-										<xs:enumeration value="create"/>
-										<xs:enumeration value="read"/>
-										<xs:enumeration value="update"/>
-										<xs:enumeration value="delete"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="valueBeforeChange" type="xs:string" minOccurs="0"/>
-							<xs:element name="valueAfterChange" type="xs:string" minOccurs="0"/>
+							<xs:element name="action" type="xs:string"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -350,4 +301,5 @@ Version:	1.0
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
 
