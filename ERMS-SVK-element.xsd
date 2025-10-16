@@ -257,10 +257,10 @@ Version:	1.0
 									</xs:restriction>
 								</xs:simpleType>
 							</xs:element>
-							<xs:element ref="auditLogEvents" minOccurs="0"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element ref="auditLogEvents" minOccurs="0"/>
 				<xs:element name="signatureInfo" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
@@ -302,6 +302,7 @@ Version:	1.0
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
+
 
 
 
