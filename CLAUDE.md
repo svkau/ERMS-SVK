@@ -11,8 +11,8 @@ The schema is **not** standalone — it must always be used together with a prof
 ## Repository Structure
 
 - `ERMS-SVK-element.xsd` — the single schema file defining all SVK-specific element extensions
-- Target namespace: `https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK-element/v2`
-- Current version: 2.0
+- Target namespace: `https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1` (schemaLocation `https://earkiv.svenskakyrkan.se/schemas/ERMS-SVK/v1/ERMS-SVK-element.xsd`)
+- Current version: 1.1 (minor versions keep the namespace; the file name never changes)
 
 ## Schema Architecture
 
